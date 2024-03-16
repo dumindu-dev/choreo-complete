@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var auth = AsgardeoAuth.AsgardeoSPAClient.getInstance();
 
     auth.initialize({
-        signInRedirectURL: "http://127.0.0.1:5501/index.html",
-        signOutRedirectURL: "http://127.0.0.1:5501/index.html",
-        clientID: "qJP8fuaU4JWsKGWX2Z66oOYlh7wa",
+        signInRedirectURL: "https://cd6d367e-4626-44a8-a4c7-a7797269f06c.e1-us-east-azure.choreoapps.dev/index.html",
+        signOutRedirectURL: "https://cd6d367e-4626-44a8-a4c7-a7797269f06c.e1-us-east-azure.choreoapps.dev/index.html",
+        clientID: "DOXfRsMgXVq6QTF0BiHrfPN6Ucsa",
         baseUrl: "https://api.asgardeo.io/t/purplewave",
         scope: [ "openid","profile"]
     });
@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
         auth.getIDToken().then((idToken) => {
             console.log(idToken);
         })
+        auth.getAccessToken().then((accessToken)=>{
+            console.log(accessToken);
+        });
     });
     logtoken.addEventListener("click", async function (ev){
         const urlParams = new URLSearchParams(window.location.search);
