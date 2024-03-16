@@ -30,6 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
         auth.getAccessToken().then((accessToken)=>{
             console.log(accessToken);
         });
+        auth.getBasicUserInfo().then((userinfoResponse) => {
+            console.log(userinfoResponse); // check userinfo response
+            console.log(userinfoResponse.email);  // check email
+     
+        }).catch((error) => {
+            console.error(error);
+        });
     });
     logtoken.addEventListener("click", async function (ev){
         const urlParams = new URLSearchParams(window.location.search);
