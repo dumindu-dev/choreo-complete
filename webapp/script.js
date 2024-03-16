@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         signOutRedirectURL: "https://cd6d367e-4626-44a8-a4c7-a7797269f06c.e1-us-east-azure.choreoapps.dev/index.html",
         clientID: "DOXfRsMgXVq6QTF0BiHrfPN6Ucsa",
         baseUrl: "https://api.asgardeo.io/t/purplewave",
-        scope: [ "openid","profile"]
+        scope: [ "openid","profile","email"]
     });
 
     let signinbtn = document.getElementById("button");
