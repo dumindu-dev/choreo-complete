@@ -29,6 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         auth.getAccessToken().then((accessToken)=>{
             console.log(accessToken);
+
+            axios.get('/choreo-apis/tsar/testchoreosrvs/books-rest-endpoint-197/v1.0/data', {
+                headers: {
+                  'Authorization': `Bearer ${accessToken}`
+                }
+            }).then((response) => {
+                console.log(response);
+            });
         });
         auth.getBasicUserInfo().then((userinfoResponse) => {
             console.log(userinfoResponse); // check userinfo response
@@ -37,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).catch((error) => {
             console.error(error);
         });
+
     });
     logtoken.addEventListener("click", async function (ev){
         const urlParams = new URLSearchParams(window.location.search);
